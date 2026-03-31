@@ -1,0 +1,15 @@
+{
+    "task_id": "l1-closure-verify-001",
+    "name": "Level 1 closure verification probe",
+    "description": "Probe task dispatched from Mac to verify Level 1 closure: ingress → claim → receipt → return path",
+    "task_type": "probe",
+    "source_node": "mac",
+    "target_node": "windows",
+    "priority": 10,
+    "timeout_seconds": 3600,
+    "max_retries": 0,
+    "payload": {
+        "action": "claim_only",
+        "note": "No execution needed. Windows should claim this task and push claim-receipt.json back to Task_stack."
+    }
+}
