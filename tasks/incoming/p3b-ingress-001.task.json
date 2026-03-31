@@ -1,0 +1,14 @@
+﻿{
+    "payload":  {
+                    "simulate_seconds":  1
+                },
+    "description":  "Test task pushed to Task_stack remote to verify ingress pipeline",
+    "max_retries":  1,
+    "task_type":  "simulate",
+    "timeout_seconds":  60,
+    "name":  "P3-B ingress verification task",
+    "source_node":  "mac-control",
+    "task_id":  "p3b-ingress-001",
+    "target_node":  "windows-exec",
+    "priority":  10
+}
