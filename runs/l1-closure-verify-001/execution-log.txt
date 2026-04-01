@@ -1,0 +1,40 @@
+[2026-04-01T10:11:00Z] === l1-closure-verify-001 execution log ===
+[2026-04-01T10:11:00Z] Task type: probe (claim_only)
+[2026-04-01T10:11:00Z] Source node: mac
+[2026-04-01T10:11:00Z] Target node: windows
+[2026-04-01T10:11:00Z] Trigger: task-stack-ingress-loop.ps1 -OneShot
+
+[2026-04-01T10:11:02Z] STEP 1: Git ingress
+  - Fetch Task_stack remote
+  - Mirror updated to commit 4c61e0a
+  - File found: tasks/incoming/l1-closure-verify-001.task.json
+  - Copied to local tasks/incoming/
+
+[2026-04-01T10:11:10Z] STEP 2: Poller processing
+  - poll_once() discovered: l1-closure-verify-001
+  - Task submitted to Store (SQLite)
+  - Task enqueued (state: QUEUED)
+  - File moved to tasks/processed/l1-closure-verify-001.task.json
+
+[2026-04-01T10:11:38Z] STEP 3: Claim
+  - claim_next_task("windows-l1-closure")
+  - State transition: QUEUED -> CLAIMED
+  - Lease: 300 seconds
+
+[2026-04-01T10:11:38Z] STEP 4: Receipt generation
+  - _write_claim_receipt() invoked
+  - Output: runs/l1-closure-verify-001/claim-receipt.json
+  - 13 fields written
+
+[2026-04-01T10:12:00Z] STEP 5: Receipt push-back
+  - Copied receipt to Task_stack mirror: runs/l1-closure-verify-001/claim-receipt.json
+  - git add + git commit: "Publish claim receipt for l1-closure-verify-001"
+  - git push origin main
+  - Remote HEAD confirmed: ea22f86
+
+[2026-04-01T10:12:00Z] STEP 6: Completion
+  - Task payload action: claim_only — no LLM execution required
+  - No errors encountered
+  - Probe execution complete
+
+[2026-04-01T10:12:00Z] === END ===
