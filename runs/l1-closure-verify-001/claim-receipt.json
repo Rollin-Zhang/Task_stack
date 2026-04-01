@@ -1,0 +1,15 @@
+{
+  "task_id": "l1-closure-verify-001",
+  "claimed_by": "windows-l1-closure",
+  "claimed_at": "2026-04-01T10:11:38.031585Z",
+  "lease_expires_at": "2026-04-01T10:16:38.031585Z",
+  "source_node": "mac",
+  "target_node": "windows",
+  "state": "CLAIMED",
+  "provider": "",
+  "model": "",
+  "ingress_mode": "local_filesystem",
+  "task_type": "probe",
+  "claim_source": "orchestrator/store",
+  "receipt_version": "1.0.0"
+}
